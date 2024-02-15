@@ -7,9 +7,16 @@ public class DeretBilangan {
         System.out.print("Masukkan NIM anda : ");
         NIM = sc25.nextLong();
         int HasilNIM =(int) (NIM % 100);
+        if (HasilNIM<10) {
+            HasilNIM+=10;
+        }
         for (int i = 1; i <= HasilNIM; i++) {            
             if (i%2 ==0) {
-                System.out.print(i);
+                if (i==6||i==10) {
+                continue;
+                }                
+                System.out.print(i);      
+            }else{
                 System.out.print(" * ");
             }
             

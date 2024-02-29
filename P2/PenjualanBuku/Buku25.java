@@ -26,5 +26,14 @@ public class Buku25 {
     void gantiharga(int hrg){
         harga = hrg;
     }
-    
+    public Buku25(){
+
+    }
+    public Buku25(String jud, String pg, int hal, int stok, int har){
+        judul = jud;
+        pengarang = pg;
+        halaman = hal;
+        this.stok = stok;
+        harga = har;
+    }
 }

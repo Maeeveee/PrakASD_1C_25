@@ -12,7 +12,13 @@ public class Buku25 {
         System.out.println("Harga : "+ harga);
     }
     void terjual(int jml){
-        stok -= jml;
+     stok -= jml;
+    if (stok>0) {
+       System.out.println(stok);
+    }else{
+        stok = 0;
+    }
+
     }
     void restock(int jml){
         stok+=jml;

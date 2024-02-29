@@ -10,8 +10,20 @@ public class BukuMain25 {
         bk1.harga = 71000;
 
         bk1.tampilInformasi();
-        bk1.terjual(200);
+        bk1.terjual(5);
         bk1.gantiharga(60000);
         bk1.tampilInformasi();
+
+        Buku25 bk2 = new Buku25();
+        bk2.judul = "How to train your dragon";
+        bk2.pengarang = "Cressida cowell";
+        bk2.halaman = 432;
+        bk2.stok = 0;
+        bk2.harga = 275_000;
+
+        bk2.tampilInformasi();
+        bk2.terjual(4);
+        bk2.gantiharga(275000);
+        bk2.tampilInformasi();
     }
 }

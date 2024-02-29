@@ -19,6 +19,7 @@ public class BukuMain25 {
         // bk2.tampilInformasi();
         Buku25 RizalAbrar = new Buku25("Rahasia lolos snbt","Rizal Abrar",200,30,100_000);
         RizalAbrar.tampilInformasi();
-}
+       System.out.println("Harga total : "+ RizalAbrar.hitungHargaTotal(8));
+       System.out.println("Diskon : "+RizalAbrar.hitungDiskon(8));
     }
-        
+}      

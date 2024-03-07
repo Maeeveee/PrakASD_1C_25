@@ -9,6 +9,8 @@ public class Segitiga25Main {
     sgArray25[2] = new segitiga25(15 ,6);
     sgArray25[3] = new segitiga25(25 , 10);
 
-    
+    for (int i = 0; i < sgArray25.length; i++) {
+        System.out.println("luas segitiga ke-"+(i+1)+" "+sgArray25[i].hitungLuas()+"keliling segitiga ke-"+(i+1)+" "+sgArray25[i].hitungKeliling());
+    }
     }
 }

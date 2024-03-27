@@ -16,11 +16,12 @@ public double totalBF(double arr[]){
     }
     return total;
 }
+
 public double totalDC(double arr[], int l, int r){
     if (l==r) {
        return arr[l]; 
     }else if (l<r){
-        int mid = (l+r) /2;
+        int mid = (l+r) /2;              
         double lsum = totalDC(arr, l, mid);
         double rsum = totalDC(arr, mid+1, r);
         return lsum + rsum;

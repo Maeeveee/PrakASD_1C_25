@@ -46,8 +46,8 @@ public class DaftarBuku25 {
         for (int i = 1; i < listBK.length; i++) {
             Buku25 temp = listBK[i];
             int j = i;
-            while (j > 0 && listBK[j-1].stock > temp.stock) {
-                listBK[j] = listBK[j-1];
+            while (j > 0 && listBK[listBK.length-1].stock > temp.stock) {
+                listBK[j] = listBK[listBK.length-1];
                 j--;
             }
             listBK[j] = temp;

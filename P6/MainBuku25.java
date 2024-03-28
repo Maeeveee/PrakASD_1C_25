@@ -29,5 +29,10 @@ public class MainBuku25 {
         System.out.println("Data setelah diurutkan secara Descending berdasarkan stock (selesction sort)");
         listBuku.selectionSort();
         listBuku.tampil();
+
+        System.out.println("*************************");
+        System.out.println("Data setelah diurutkan secara ascending berdasarkan stock (insertion sort)");
+        listBuku.insertionSort();
+        listBuku.tampil();
     }
 }

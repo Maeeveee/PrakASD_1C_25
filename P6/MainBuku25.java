@@ -21,8 +21,13 @@ public class MainBuku25 {
         listBuku.tampil();
 
         System.out.println("*************************");
-        System.out.println("Data setelah diurutkan secara Ascending berdasarkan stock");
+        System.out.println("Data setelah diurutkan secara Ascending berdasarkan stock (Bubble sort)");
         listBuku.bubbleSort();
+        listBuku.tampil();
+
+        System.out.println("*************************");
+        System.out.println("Data setelah diurutkan secara Descending berdasarkan stock (selesction sort)");
+        listBuku.selectionSort();
         listBuku.tampil();
     }
 }

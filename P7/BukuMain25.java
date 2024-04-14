@@ -31,9 +31,19 @@ public class BukuMain25 {
         System.out.println("Pencarian Buku : ");
         System.out.println("Masukkan Kode Buku : ");
         int cari = sc25.nextInt();
+
         System.out.println("Menggunakan Sequential Search");
         int posisi = PencarianMhs.findSeqSearch(cari);
         PencarianMhs.tampilposisi(cari, posisi);
         PencarianMhs.tampilData(cari, posisi);
+
+        Buku25 dataBuku = PencarianMhs.findBuku(cari);
+
+        if (dataBuku != null) {
+            dataBuku.tampilDataBuku();
+        }else {
+            System.out.println("Buku tidak ditemukan");
+        }
+
     }
 }

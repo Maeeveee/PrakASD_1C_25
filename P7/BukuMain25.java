@@ -45,5 +45,10 @@ public class BukuMain25 {
             System.out.println("Buku tidak ditemukan");
         }
 
+        System.out.println("================================");
+        System.out.println("Menggunakan Binary Search");
+        posisi = PencarianMhs.findBinarySearch(cari, 0, jumBuku - 1);
+        PencarianMhs.tampilposisi(cari, posisi);
+        PencarianMhs.tampilData(cari, posisi);
     }
 }

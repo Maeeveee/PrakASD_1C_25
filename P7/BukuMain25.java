@@ -11,11 +11,11 @@ public class BukuMain25 {
         System.out.println("======================================");
         System.out.println("Masukkan Data Buku Secara Urut Dari Kode Buku Terkecil : ");
 
-        Buku25 m = new Buku25(116, "Algoritma", 2019, "Wahyuni", 5);
-        Buku25 m1 = new Buku25(124, "Big Data", 2020, "Susilo", 3);
-        Buku25 m2= new Buku25(123, "Desain UI", 2021, "Supriadi", 6);
-        Buku25 m3 = new Buku25(121, "Web Programming", 2022, "Pustaka Adi", 2);
-        Buku25 m4 = new Buku25(127, "Etika Mahasiswa", 2023, "Darmawan Adi", 1);
+        Buku25 m = new Buku25(20215, "Algoritma", 2019, "Wahyuni", 5);
+        Buku25 m1 = new Buku25(20214, "Big Data", 2020, "Susilo", 3);
+        Buku25 m2= new Buku25(20212, "Desain UI", 2021, "Supriadi", 6);
+        Buku25 m3 = new Buku25(20211, "Web Programming", 2022, "Pustaka Adi", 2);
+        Buku25 m4 = new Buku25(20210, "Etika Mahasiswa", 2023, "Darmawan Adi", 1);
 
         PencarianMhs.tambah(m);
         PencarianMhs.tambah(m1);

@@ -5,11 +5,11 @@ public class PencarianBuku25 {
     int idx;
 
     public void tambah(Buku25 bk){
-        if (idx< listBuku.length){
+        if (idx < listBuku.length){
             listBuku[idx] = bk;
-            idx ++;
+            idx++;
         } else{
-            System.out.println("Data Sudah Penuh");
+            System.out.println("Tidak bisa menambahkan data, kapasitas maksimum telah tercapai");
         }
     }
     
@@ -19,10 +19,10 @@ public class PencarianBuku25 {
         }
     }
 
-    public int findSeqSearch(int cari){
+    public int findSeqSearch(String cari){
         int posisi = -1;
         for (int i = 0; i < listBuku.length; i++) {
-            if (listBuku[i].kodeBuku == cari) {
+            if (listBuku[i].kodeBuku.equals(cari)) {
                 posisi = i;
                 break;
             }
@@ -30,45 +30,45 @@ public class PencarianBuku25 {
         return posisi;
     }
 
-    public void tampilposisi(int x, int pos){
+    public void tampilposisi(String kodeBuku, int pos){
         if (pos != -1) {
-            System.out.println("data : "+x+" ditemukan pada indeks "+pos);
+            System.out.println("Data: " + kodeBuku + " ditemukan pada indeks " + pos);
         } else{
-            System.out.println("data "+x+" tidak ditemukan");
+            System.out.println("Data " + kodeBuku + " tidak ditemukan");
         }
 
     }
 
-    public void tampilData(int x, int pos){
+    public void tampilData(String kodeBuku, int pos){
         if (pos != -1) {
-            System.out.println("Kode Buku : "+x);
-            System.out.println("Judul : "+listBuku[pos].judul);
-            System.out.println("tahun Terbit : "+listBuku[pos].tahunTerbit);
-            System.out.println("Pengarang : "+listBuku[pos].pengarang);
-            System.out.println("Stock : "+listBuku[pos].stock);
+            System.out.println("Kode Buku : " + kodeBuku);
+            System.out.println("Judul : " + listBuku[pos].judul);
+            System.out.println("Tahun Terbit : " + listBuku[pos].tahunTerbit);
+            System.out.println("Pengarang : " + listBuku[pos].pengarang);
+            System.out.println("Stock : " + listBuku[pos].stock);
         }else{
-            System.out.println("data "+x+" tidak ditemukan");
+            System.out.println("Data " + kodeBuku + " tidak ditemukan");
         }
     }
     
-    public Buku25 findBuku (int cari){
+    public Buku25 findBuku (String cari){
         for (int i = 0; i < listBuku.length; i++) {
-            if (listBuku[i].kodeBuku == cari) {
+            if (listBuku[i].kodeBuku.equals(cari)) {
                 return listBuku[i];
             }
         }
         return null;
     }
-    public int findBinarySearch(int cari, int left, int right){
-        int mid;
-        if (right>=left) {
-            mid = (left + right)/2;
-            if (cari == listBuku[mid].kodeBuku) {
+
+    public int findBinarySearch(String cari, int left, int right){
+        if (right >= left) {
+            int mid = (left + right) / 2;
+            if (cari.equals(listBuku[mid].kodeBuku)) {
                 return mid;
-            } else if (listBuku[mid].kodeBuku < cari) {
-                return findBinarySearch(cari, left, mid-1);
+            } else if (listBuku[mid].kodeBuku.compareTo(cari) < 0) { 
+                return findBinarySearch(cari, left, mid - 1);
             } else {
-                return findBinarySearch(cari, mid+1, right);
+                return findBinarySearch(cari, mid + 1, right);
             }
         }
         return -1;

@@ -59,16 +59,71 @@ public class PencarianBuku25 {
         }
         return null;
     }
-
+    public void sortBukuByKode() {
+        for (int i = 0; i < listBuku.length - 1; i++) {
+            for (int j = 0; j < listBuku.length - i - 1; j++) {
+                if (listBuku[j].kodeBuku.compareTo(listBuku[j + 1].kodeBuku) > 0) {
+                    //swap
+                    Buku25 temp = listBuku[j];
+                    listBuku[j] = listBuku[j + 1];
+                    listBuku[j + 1] = temp;
+                }
+            }
+        }
+    }
+    
     public int findBinarySearch(String cari, int left, int right){
         if (right >= left) {
             int mid = (left + right) / 2;
-            if (cari.equals(listBuku[mid].kodeBuku)) {
+            int comparisonResult = listBuku[mid].kodeBuku.compareTo(cari);
+            if (comparisonResult == 0) {
                 return mid;
-            } else if (listBuku[mid].kodeBuku.compareTo(cari) < 0) { 
-                return findBinarySearch(cari, left, mid - 1);
-            } else {
+            } else if (comparisonResult < 0) { 
                 return findBinarySearch(cari, mid + 1, right);
+            } else {
+                return findBinarySearch(cari, left, mid - 1); 
+            }
+        }
+        return -1;
+    }
+    public void sortBukuByJudul() {
+        for (int i = 0; i < listBuku.length - 1; i++) {
+            for (int j = 0; j < listBuku.length - i - 1; j++) {
+                if (listBuku[j].judul.compareTo(listBuku[j + 1].judul) > 0) {
+                    // Tukar posisi
+                    Buku25 temp = listBuku[j];
+                    listBuku[j] = listBuku[j + 1];
+                    listBuku[j + 1] = temp;
+                }
+            }
+        }
+    }
+    public int findSeqSearchByJudul(String judul){
+        int count = 0;
+        int indexBuku = -1;
+        for (int i = 0; i < listBuku.length; i++) {
+            if (listBuku[i].judul.equalsIgnoreCase(judul)) {
+                if (indexBuku == -1) {
+                    indexBuku = i;
+                } else {
+                    count++;
+                }
+            }
+        }
+        if (count > 0) {
+            System.out.println("Ada lebih dari 1 buku dengan judul " + judul);
+        }
+        return indexBuku;
+    }
+    public int findBinarySearchByJudul(String judul, int left, int right){
+        if (right >= left) {
+            int mid = (left + right) / 2;
+            if (judul.equals(listBuku[mid].judul)) {
+                return mid;
+            } else if (listBuku[mid].judul.compareTo(judul) < 0) { 
+                return findBinarySearchByJudul(judul, left, mid - 1);
+            } else {
+                return findBinarySearchByJudul(judul, mid + 1, right);
             }
         }
         return -1;

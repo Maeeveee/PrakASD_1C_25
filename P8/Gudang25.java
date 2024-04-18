@@ -58,6 +58,17 @@ public class Gudang25 {
             return null;
         }
     }
+    public Barang25 lihatBarangTerbawah(){
+        if (!cekKosong()) {
+            int terbawah = top - (tumpukan.length-1);
+            Barang25 barangterbawah = tumpukan[terbawah];
+            System.out.println("Barang terbawah : "+barangterbawah.nama);
+            return barangterbawah;
+        }else{
+            System.out.println("tumpukan barang kosong");
+            return null;
+        }
+    }
     public void tampilkanBarang(){
         if (!cekKosong()) {
             System.out.println("Rincian rumpukan barang di gudang : ");
@@ -80,5 +91,15 @@ public class Gudang25 {
             biner += stack.pop();
         }
         return biner;
+    }
+    public int findSeqSearch(int cariKode) {
+        int posisi = -1;
+        for (int i = 0; i <= top; i++) {
+            if (tumpukan[i].kode == cariKode) {
+                posisi = i;
+                break;
+            }
+        }
+        return posisi;
     }
 }

@@ -24,14 +24,14 @@ public class QueueNasabahMain25 {
                 case 1:
                     System.out.print("No Rekening : ");
                     String norek = sc25.nextLine();
-                    System.out.print("No Rekening : ");
+                    System.out.print("Nama : ");
                     String nama = sc25.nextLine();
-                    System.out.print("No Rekening : ");
+                    System.out.print("Alamat : ");
                     String alamat = sc25.nextLine();
-                    System.out.print("No Rekening : ");
+                    System.out.print("Umur : ");
                     int umur = sc25.nextInt();
                     sc25.nextLine();
-                    System.out.print("No Rekening : ");
+                    System.out.print("Saldo : ");
                     double saldo = sc25.nextDouble();
 
                     Nasabah25 nb = new Nasabah25(norek, nama, alamat, umur, saldo);

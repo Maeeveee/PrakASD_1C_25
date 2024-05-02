@@ -7,6 +7,7 @@ public class QueueNasabahMain25 {
         System.out.println("2. Antrian keluar");
         System.out.println("3. Cek antrian terdepan");
         System.out.println("4. Cek semua antrian");
+        System.out.println("5. Cek antrian paling belakang");
     }
     public static void main(String[] args) {
         Scanner sc25 =  new Scanner(System.in);
@@ -49,6 +50,9 @@ public class QueueNasabahMain25 {
                     break;
                 case 4:
                 antri.print();
+                    break;
+                case 5: 
+                antri.peekRear();
                     break;
                 default:
                     break;

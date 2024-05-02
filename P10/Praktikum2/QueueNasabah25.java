@@ -34,6 +34,13 @@ public class QueueNasabah25 {
             System.out.println("Queue masih kosong");
         }
     }
+    public void peekRear(){
+        if(!isEmpty()){
+            System.out.println("elemen Terdepan: "+data[rear].norek+" "+data[rear].nama+" "+data[rear].alamat+" "+data[rear].umur+" "+data[rear].saldo);
+        } else {
+            System.out.println("Queue masih kosong");
+        }
+    }
     public void print(){
         if (isEmpty()) {
             System.out.println("Queue masih kosong");

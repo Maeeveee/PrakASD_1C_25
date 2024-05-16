@@ -31,8 +31,7 @@ public class SingleLinkedList25 {
     public void addLast(int input){
         node25 ndInput = new node25(input, null);
         if (isEmpty()) {
-            head = ndInput;
-            tail = ndInput;
+            head = tail = ndInput;
         }else{
             tail.next = ndInput;
             tail = ndInput;
@@ -47,8 +46,8 @@ public class SingleLinkedList25 {
                 temp.next = ndInput;
                 if (ndInput.next == null) {
                     tail = ndInput;
-                    break;
                 }
+                break;
             }
             temp = temp.next;
         }while(temp != null);
@@ -71,5 +70,82 @@ public class SingleLinkedList25 {
             }
         }
     }
-    
+    public int getData(int index){
+        node25 tmp = head;
+        for (int i = 0; i < index-1; i++) {
+            tmp = tmp.next;
+        }
+        return tmp.next.data;
+    }
+    public int indexOf(int key){
+        node25 tmp = head;
+        int index = 0;
+        while (tmp != null&&tmp.data != key) {
+            tmp = tmp.next;
+            index++;
+        }
+        if (tmp == null) {
+            return -1;
+        }else{
+            return index;
+        }
+    }
+    public void removeFirst(){
+        if (isEmpty()) {
+            System.out.println("Linked list masih kosong data tidak dapat dihapus");
+        }else if(head == tail){
+            head = tail = null;
+        }else{
+            head = head.next;
+        }
+    }
+    public void removeLast(){
+        if (isEmpty()) {
+            System.out.println("Linked list masih kosong data tidak dapat dihapus");
+        }else if (head == tail) {
+            head = tail = null;
+        }else{
+            node25 tmp = head;
+            while (tmp.next != tail) {
+                tmp = tmp.next;
+            }
+            tmp.next = null;
+            tail = tmp;
+        }
+    }
+    public void remove(int key){
+        if (isEmpty()) {
+            System.out.println("Linked list masih kosong data tidak dapat dihapus");   
+        }else{
+            node25 temp = head;
+            while(temp != null){
+                if (temp.data == key && temp == head) {
+                    removeFirst();
+                    break;
+                }else if (temp.next.data == key) {
+                    temp.next = temp.next.next;
+                    if (temp.next == null) {
+                        tail = temp;
+                    }
+                    break;
+                }
+                temp = temp.next;
+            }
+        }
+    }
+    public void removeAt(int index){
+        if (index == 0 ) {
+            removeFirst();
+        }else{
+            node25 temp = head;
+            for (int i = 0; i < index-1; i++) {
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+            if (temp.next == null) {
+                tail = temp;
+            }
+        }
+    }
+
 }

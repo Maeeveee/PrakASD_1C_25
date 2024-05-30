@@ -27,6 +27,29 @@ public class BinaryTreeMain25 {
     System.out.println("");
     System.out.print("preOrder Traversal:");
     bt.traversePreOrder(bt.root);
-    System.out.println("");    
+    System.out.println(""); 
+
+    //Latihan praktikum nomor 1
+    System.out.println("Menambahkan data secara rekursif : (14,2,20,1)");
+    int[] dataRecursive = {14,2,20,1};
+    for (int value : dataRecursive) {
+        bt.addRecursive(value);
     }
+    System.out.print("inOrder Traversal:");
+    bt.traverseInOrder(bt.root);
+
+    //Latihan praktikum nomor 2
+    int dataMax = bt.findMaxValue();
+    int dataMin = bt.findMinValue();
+    System.out.println("\nNilai Max : "+dataMax);
+    System.out.println("Nilai Min : "+dataMin);
+
+    //Latihan praktikum nomor 3
+    bt.displayLeafNodes();
+
+    //Latihan praktikum nomor 4
+    int leafCount = bt.countLeafNodes();
+    System.out.println("\nJumlah leaf nodes : "+leafCount);
+    }
+
 }

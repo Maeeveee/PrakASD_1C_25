@@ -149,5 +149,77 @@ public class BinaryTree25 {
             }
         }
     }
+    //Latihan Praktikum nomor 1
+    public void addRecursive(int data) {
+        root = addRecursive(root, data);
+    }
+    public Node25 addRecursive(Node25 currrent, int data) {
+        if (currrent == null) {
+            return new Node25(data);
+        }
+        if (data<currrent.data) {
+            currrent.left = addRecursive(currrent.left, data);
+        }else if (data>currrent.data) {
+            currrent.right = addRecursive(currrent.right, data);
+        }else{
+            return currrent;
+        }
+        return currrent;
+    }
+    //Latihan praktikum nomor 2
+    public int findMinValue() {
+        if (isEmpty()) {
+            System.out.println("Tree kosong");
+            return -1;
+        }
 
+        Node25 current = root;
+        while (current.left != null) {
+            current = current.left;
+        }
+        return current.data;
+    }
+
+    public int findMaxValue() {
+        if (isEmpty()) {
+            System.out.println("Tree kosong");
+            return -1;
+        }
+
+        Node25 current = root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        return current.data;
+    }
+    //Latihan praktikum nomor 3
+    public void displayLeafNodes(){
+        displayLeafNodes(root);
+    }
+    public void displayLeafNodes(Node25 node){
+        if (node == null) {
+            return;
+        }
+        if (node.left == null && node.right == null) {
+            System.out.print(" "+node.data);
+        }
+        displayLeafNodes(node.left);
+        displayLeafNodes(node.right);
+    }
+
+    //Latihan praktikum nomor 4
+    public int countLeafNodes(){
+        return countLeafNodes(root);
+    }
+    public int countLeafNodes(Node25 node){
+        if (node == null) {
+            return 0;
+        }
+        if (node.left == null && node.right == null) {
+            return 1;
+        }
+        int leftCount = countLeafNodes(node.left);
+        int rightCount = countLeafNodes(node.right);
+        return leftCount + rightCount;
+    }
 }

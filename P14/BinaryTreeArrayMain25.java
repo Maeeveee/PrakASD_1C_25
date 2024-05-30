@@ -9,5 +9,13 @@ public class BinaryTreeArrayMain25 {
         System.out.print("\nInOrder Traversal : ");
         bta.traverseInOrder(0);
         System.out.println("\n");
+
+        //Latihan praktikum nomor 5
+        bta.add(1);
+        bta.add(2);
+        System.out.print("preOrder Traversal : ");
+        bta.traversePreOrder();
+        System.out.print("\npostOrder Traversal : ");
+        bta.traversePostOrder();
     }       
 }

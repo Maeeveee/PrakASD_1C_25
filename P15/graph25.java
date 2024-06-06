@@ -53,12 +53,34 @@ public class graph25 {
             if (list[i].size>0) {
                 System.out.println("gedung "+(char)('A'+i)+" terhubung dengan ");
                 for (int j = 0; j < list[i].size; j++) {
-                    System.out.print((char) ('A' + list[i].getJarak(j))+"("+list[i].getJarak(j)+"m), ");
+                    System.out.print((char) ('A' + list[i].get(j))+"("+list[i].get(j)+"m), ");
                 }
                 System.out.println("");
             }
         }
         System.out.println("");
     }
+    public boolean isPathExist(int asal, int tujuan) throws Exception {
+        boolean[] kunjungan = new boolean[vertex];
+        return dfs(asal, tujuan, kunjungan);
+    }
 
+    private boolean dfs(int current, int tujuan, boolean[] kunjungan) throws Exception {
+        if (current == tujuan) {
+            return true;
+        }
+
+        kunjungan[current] = true;
+
+        for (int i = 0; i < list[current].size(); i++) {
+            int tetangga = list[current].get(i);
+            if (!kunjungan[tetangga]) {
+                if (dfs(tetangga, tujuan, kunjungan)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
 }

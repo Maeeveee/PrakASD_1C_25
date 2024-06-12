@@ -69,4 +69,14 @@ public class DoubleLinkedList25 {
         head = null;
         size = 0;
     }
+    public void updateWeight(int index, int weight) throws Exception {
+        if (index < 0 || index >= size) {
+            throw new Exception("Index out of bounds");
+        }
+        Node25 current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        current.jarak = weight;
+    }
 }

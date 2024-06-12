@@ -28,4 +28,27 @@ public class GraphMatriks25 {
             System.out.println();
         }
     }
+    public int inDegree(int node) {
+        int inDegree = 0;
+        for (int i = 0; i < vertex; i++) {
+            if (matriks[i][node] > 0) {
+                inDegree++;
+            }
+        }
+        return inDegree;
+    }
+
+    public int outDegree(int node) {
+        int outDegree = 0;
+        for (int i = 0; i < vertex; i++) {
+            if (matriks[node][i] > 0) {
+                outDegree++;
+            }
+        }
+        return outDegree;
+    }
+
+    public int totalDegree(int node) {
+        return inDegree(node) + outDegree(node);
+    }
 }

@@ -13,5 +13,21 @@ public class GraphMatriksMain25 {
         System.out.println("Hasil setelah penghapusan edge : ");
         gdg.removeEdge(2, 1);
         gdg.printGraph();
+
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Gedung " + (char)('A' + i) + " inDegree: " + gdg.inDegree(i));
+            System.out.println("Gedung " + (char)('A' + i) + " outDegree: " + gdg.outDegree(i));
+            System.out.println("Gedung " + (char)('A' + i) + " totalDegree: " + gdg.totalDegree(i));
+        }
+
+        System.out.println("Hasil setelah penghapusan edge : ");
+        gdg.removeEdge(2, 1);
+        gdg.printGraph();
+        
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Gedung " + (char)('A' + i) + " inDegree: " + gdg.inDegree(i));
+            System.out.println("Gedung " + (char)('A' + i) + " outDegree: " + gdg.outDegree(i));
+            System.out.println("Gedung " + (char)('A' + i) + " totalDegree: " + gdg.totalDegree(i));
+        }
     }
 }
